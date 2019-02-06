@@ -1,9 +1,10 @@
-const fs = require("fs")
-const loadExternalScripts = require('./loadExternalScripts');
+const fs = require("fs");
+const path = require('path');
+const loadExternalScripts = require('../jest-helpers/loadExternalScripts');
 
 // files to test
-const jQueryFile = fs.readFileSync("jquery.js", { encoding: "utf-8" });
-const srcFile = fs.readFileSync("lib.js", { encoding: "utf-8" });
+const jQueryFile = fs.readFileSync(path.resolve(__dirname, '../src/jquery.js'), { encoding: 'utf-8' });
+const srcFile = fs.readFileSync(path.resolve(__dirname, '../src/lib.js'), { encoding: 'utf-8' });
 
 describe('lib.js functions', () => {
     beforeAll(() => {
